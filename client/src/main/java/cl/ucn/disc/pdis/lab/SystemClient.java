@@ -14,6 +14,8 @@ import com.zeroc.Ice.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Scanner;
+
 /**
  * Implementacion del cliente.
  *
@@ -44,29 +46,25 @@ public final class SystemClient {
                 throw new IllegalStateException("Invalid Engine! (wrong proxy?)");
             }
 
+            // Return the actual date.
             final String theDate = engine.getDate();
             log.debug("The Date: {}", theDate);
 
-            String theRut = engine.getDigitoVerificador("10001112");
-            log.debug("the DV is: {}", theRut);
+            // You must enter a Rut by keyboard.
+            log.debug("\n\nWelcome User, enter a rut and I will return your DV!");
 
-            theRut = engine.getDigitoVerificador("1000111-2");
-            log.debug("the DV is: {}", theRut);
+            Scanner scanner = new Scanner(System.in);
+            String rut = scanner.nextLine();
 
-            theRut = engine.getDigitoVerificador("nu bn im9");
-            log.debug("the DV is: {}", theRut);
+            // Verify that the length of the Rut is not less than a valid one.
+            while (rut.length() < 8) {
+                log.debug("The Rut must be at least 8 characters long. Please try again.");
+                rut = scanner.nextLine();
+            }
 
-            theRut = engine.getDigitoVerificador("1.0¡¡¡¿'?00.111-++");
-            log.debug("the DV is: {}", theRut);
-
-            theRut = engine.getDigitoVerificador("0");
-            log.debug("the DV is: {}", theRut);
-
-            theRut = engine.getDigitoVerificador("11@00");
-            log.debug("the DV is: {}", theRut);
-
-            theRut = engine.getDigitoVerificador("11.000.111-2");
-            log.debug("the DV is: {}", theRut);
+            // The DV valid if the Rut  is valid.
+            String theDV = engine.getDigitoVerificador(rut);
+            log.debug("the DV is: [{}]", theDV);
 
         }
 

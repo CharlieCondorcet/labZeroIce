@@ -17,21 +17,39 @@ package cl.ucn.disc.pdis.lab.zeroice.model;
 
 public interface EnginePrx extends com.zeroc.Ice.ObjectPrx
 {
+    /**
+     * Se le devuelve la fecha actual al Cliente.
+     * @return la fecha actual al momento del request.
+     **/
     default String getDate()
     {
         return getDate(com.zeroc.Ice.ObjectPrx.noExplicitContext);
     }
 
+    /**
+     * Se le devuelve la fecha actual al Cliente.
+     * @param context The Context map to send with the invocation.
+     * @return la fecha actual al momento del request.
+     **/
     default String getDate(java.util.Map<String, String> context)
     {
         return _iceI_getDateAsync(context, true).waitForResponse();
     }
 
+    /**
+     * Se le devuelve la fecha actual al Cliente.
+     * @return la fecha actual al momento del request.
+     **/
     default java.util.concurrent.CompletableFuture<java.lang.String> getDateAsync()
     {
         return _iceI_getDateAsync(com.zeroc.Ice.ObjectPrx.noExplicitContext, false);
     }
 
+    /**
+     * Se le devuelve la fecha actual al Cliente.
+     * @param context The Context map to send with the invocation.
+     * @return la fecha actual al momento del request.
+     **/
     default java.util.concurrent.CompletableFuture<java.lang.String> getDateAsync(java.util.Map<String, String> context)
     {
         return _iceI_getDateAsync(context, false);
@@ -55,8 +73,8 @@ public interface EnginePrx extends com.zeroc.Ice.ObjectPrx
     }
 
     /**
-     * Verificacion de un RUT, se permite el uso de guion.
-     * @return the digito verificador del rut, vacio si el rut es incorrecto.
+     * Verificacion de un RUT, se permite el uso de guion y puntos.
+     * @return el digito verificador del Rut, vacio si el rut es incorrecto.
      **/
     default String getDigitoVerificador(String rut)
     {
@@ -64,9 +82,9 @@ public interface EnginePrx extends com.zeroc.Ice.ObjectPrx
     }
 
     /**
-     * Verificacion de un RUT, se permite el uso de guion.
+     * Verificacion de un RUT, se permite el uso de guion y puntos.
      * @param context The Context map to send with the invocation.
-     * @return the digito verificador del rut, vacio si el rut es incorrecto.
+     * @return el digito verificador del Rut, vacio si el rut es incorrecto.
      **/
     default String getDigitoVerificador(String rut, java.util.Map<String, String> context)
     {
@@ -74,8 +92,8 @@ public interface EnginePrx extends com.zeroc.Ice.ObjectPrx
     }
 
     /**
-     * Verificacion de un RUT, se permite el uso de guion.
-     * @return the digito verificador del rut, vacio si el rut es incorrecto.
+     * Verificacion de un RUT, se permite el uso de guion y puntos.
+     * @return el digito verificador del Rut, vacio si el rut es incorrecto.
      **/
     default java.util.concurrent.CompletableFuture<java.lang.String> getDigitoVerificadorAsync(String rut)
     {
@@ -83,9 +101,9 @@ public interface EnginePrx extends com.zeroc.Ice.ObjectPrx
     }
 
     /**
-     * Verificacion de un RUT, se permite el uso de guion.
+     * Verificacion de un RUT, se permite el uso de guion y puntos.
      * @param context The Context map to send with the invocation.
-     * @return the digito verificador del rut, vacio si el rut es incorrecto.
+     * @return el digito verificador del Rut, vacio si el rut es incorrecto.
      **/
     default java.util.concurrent.CompletableFuture<java.lang.String> getDigitoVerificadorAsync(String rut, java.util.Map<String, String> context)
     {

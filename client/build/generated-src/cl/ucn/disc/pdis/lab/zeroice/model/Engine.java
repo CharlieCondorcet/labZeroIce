@@ -17,12 +17,17 @@ package cl.ucn.disc.pdis.lab.zeroice.model;
 
 public interface Engine extends com.zeroc.Ice.Object
 {
+    /**
+     * Se le devuelve la fecha actual al Cliente.
+     * @param current The Current object for the invocation.
+     * @return la fecha actual al momento del request.
+     **/
     String getDate(com.zeroc.Ice.Current current);
 
     /**
-     * Verificacion de un RUT, se permite el uso de guion.
+     * Verificacion de un RUT, se permite el uso de guion y puntos.
      * @param current The Current object for the invocation.
-     * @return the digito verificador del rut, vacio si el rut es incorrecto.
+     * @return el digito verificador del Rut, vacio si el rut es incorrecto.
      **/
     String getDigitoVerificador(String rut, com.zeroc.Ice.Current current);
 
