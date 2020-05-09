@@ -1,6 +1,6 @@
 # labZeroIce
 
-<b>IntelliJ Idea  -  Java  -  Zero Ice   -   UCN</b>
+**IntelliJ Idea  -  Java  -  Zero Ice   -   UCN**
 
 ## Description
 The client must enter a Rut by keyboard and the server will return the verifier number(DV).

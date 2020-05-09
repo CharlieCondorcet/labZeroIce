@@ -37,3 +37,12 @@
 /captures
 .externalNativeBuild
 .cxx
+
+/client/build/generated-src/
+/server/build/generated-src/
+
+*.class
+client/build/generated/
+client/build/tmp/
+server/build/generated/
+server/build/tmp/
